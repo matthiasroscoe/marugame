@@ -1,0 +1,71 @@
+.c-overlay {
+	position: fixed;
+	z-index: $z-overlay;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background: $red;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(110%);
+	will-change: transform;
+	transition: transform 1250ms $mgEase;
+
+	&.is-active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&.is-animated {
+		transform: translateY(0%);
+	}
+
+	&__inner {
+		overflow: scroll;
+		height: 100%;
+	}
+
+	&__content {
+		padding-top: 75px;
+		margin-bottom: 140px;
+	}
+
+	.c-wysiwyg {
+		max-width: 670px;
+		margin-bottom: 150px;
+	}
+
+	&__close {
+		display: block;
+		position: fixed;
+		top: 15px;
+		right: 15px;
+		width: 50px;
+		height: 50px;
+		transition: all $mgEase 400ms;
+		
+		@include media-breakpoint-up(lg) {
+			width: 57px;
+			height: 57px;
+			right: 30px;
+
+			&:hover {
+				opacity: .85;
+			}
+		}
+	}
+
+	&__stars {
+		position: absolute;
+		top: -70px;
+		width: 150px;
+	}
+
+	&__rings {
+		position: absolute;
+		width: 72vw;
+		bottom: -35vh;
+		right: -50vw;
+	}
+}

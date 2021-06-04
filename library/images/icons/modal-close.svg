@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" viewBox="0 0 43 43">
+  <g id="Group_807" data-name="Group 807" transform="translate(-1318.359 -17.899)">
+    <path id="Icon_metro-cross" data-name="Icon metro-cross" d="M16.3,13.063h0l-4.2-4.2,4.2-4.2h0a.434.434,0,0,0,0-.612L14.318,2.055a.434.434,0,0,0-.612,0h0l-4.2,4.2-4.2-4.2h0a.434.434,0,0,0-.612,0L2.7,4.041a.434.434,0,0,0,0,.612h0l4.2,4.2-4.2,4.2h0a.434.434,0,0,0,0,.612l1.986,1.986a.434.434,0,0,0,.612,0h0l4.2-4.2,4.2,4.2h0a.434.434,0,0,0,.612,0L16.3,13.676a.434.434,0,0,0,0-.612Z" transform="translate(1330.358 30.541)" fill="#868579" stroke="#f0efe9" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <g id="Ellipse_3" data-name="Ellipse 3" transform="translate(1318.359 17.899)" fill="none" stroke="#868579" stroke-width="1">
+      <circle cx="21.5" cy="21.5" r="21.5" stroke="none"/>
+      <circle cx="21.5" cy="21.5" r="21" fill="none"/>
+    </g>
+  </g>
+</svg>

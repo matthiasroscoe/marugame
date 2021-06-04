@@ -1,0 +1,35 @@
+.js-lottie-home-line {
+	position: absolute;
+	width: 1344px;
+	height: 2086px;
+	top: calc(100vh - 545px);
+	left: -370px;
+
+	@include media-breakpoint-up(lg) {
+		width: 140vw;
+		max-width: 1900px;
+		left: -35vw;
+		height: auto;
+		top: 100vh;
+	}
+	@include media-breakpoint-up(xl) {
+		width: 140vw;
+		left: -32vw;
+	}
+	@include media-breakpoint-up(xxl) {
+		width: 120vw;
+		left: -28vw;
+	}
+	@media screen and (min-width: 1800px) {
+		left: -9vw;
+	}
+	@media screen and (min-width: 2000px) {
+		left: -8vw;
+	}
+	@media screen and (min-width: 2500px) {
+		left: -5vw;
+	}
+	@media screen and (min-width: 2800px) {
+		display: none;
+	}
+}

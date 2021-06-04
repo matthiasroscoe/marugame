@@ -1,0 +1,19 @@
+// Keyframes
+@keyframes rotate {
+    from { transform: rotate(0deg) }
+    to { transform: rotate(360deg) }
+}
+
+// Fade in animations
+.js-hidden {
+    @include media-breakpoint-up(lg) {
+        opacity: 0;
+        transition: all ease 900ms;
+        transform: translateY(30px);
+        
+        &.js-visible {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+}

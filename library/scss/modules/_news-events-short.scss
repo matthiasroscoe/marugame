@@ -1,0 +1,182 @@
+.news-events-short {
+    z-index: 2;
+
+    &__intro {
+        margin-bottom: 35px;
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 65px;
+        }
+        .c-btn {
+            min-width: 151px;
+        }
+    }
+
+    &__inner {
+        @include media-breakpoint-down(sm) {
+            padding-right: 0 !important;
+        }
+
+        .slick-slide {
+            margin-right: 30px;
+            @include media-breakpoint-up(sm) {
+                margin-right: 20px;
+            }
+            @include media-breakpoint-up(lg) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__article {
+        position: relative;
+        display: inline-block;
+        border-radius: 5px 5px 0 0;
+        margin-bottom: 12px;
+
+        @include media-breakpoint-up(lg) {
+            overflow: hidden;
+
+            width: calc(33.333% - 7px);
+            height: 243px;
+            float: right;
+
+            @media screen and (min-height: 700px) {
+                height: 293px;
+            }
+
+            &::after {
+                content: '';
+                @include absolute-fill;
+                background: linear-gradient(to top, rgba(0,0,0,0.77) 0%, rgba(255,255,255,0) 95%);
+            }
+
+            &:hover {
+                .news-events-short__article__img {
+                    transform: scale(1.07);
+                }
+                .description {
+                    opacity: 1;
+                }
+            }
+
+            &--top-right {
+                    margin-bottom: 14px;
+                }
+
+            &--large {
+                width: calc(66.666% - 7px);
+                height: 500px;
+                float: left;
+                
+                &::after {
+                    background: linear-gradient(to top, rgba(0,0,0,0.77) 0%, rgba(255,255,255,0) 56%);
+                }
+                
+                @media screen and (min-height: 700px) {
+                    height: 600px;
+                }
+
+                .news-events-short__article__content {
+                    padding: 0 55px 55px;
+
+                    .description {
+                        bottom: 55px;
+                        left: 55px;
+                        padding-right: 175px;
+                    }
+    
+                    .arrow {
+                        bottom: 62px;
+                        right: 55px;
+                        width: 67px;
+                        height: 37px;
+                    }
+                }
+            }
+        }
+
+        &__img {
+            margin-bottom: 30px;
+            border-radius: 4px;
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            transition: transform ease 1000ms;
+            transform-origin: center 75%;
+
+            @include media-breakpoint-up(lg) {
+                margin-bottom: 0;
+                border-radius: 0;
+                height: auto;
+                @include absolute-fill
+            }
+        }
+
+        &__content {
+            z-index: 2;
+            position: relative;
+
+            @include media-breakpoint-up(lg) {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                padding: 0 35px 35px;
+            }
+
+            .t-thumb-heading {
+                @include media-breakpoint-up(lg) {
+                    color: $white;
+                    margin-bottom: 0;
+                    transition: all ease 1000ms;
+                }
+            }
+
+            .description {
+                @include media-breakpoint-up(lg) {
+                    padding-right: 90px;
+                    margin-bottom: 0;
+                    position: absolute;
+                    bottom: 35px;
+                    left: 35px;
+                    color: $white;
+                    opacity: 0;
+                    transition: opacity ease 1000ms;
+                }
+            }
+
+            .arrow {
+                position: absolute;
+                right: 35px;
+                bottom: 42px;
+                width: 40px;
+                height: 22px;
+            }
+
+            .c-btn {
+                min-width: 134px;
+            }
+        }
+
+        &__link {
+            z-index: 3;
+        }
+
+        &--featured {
+            &:nth-child(1) {
+                flex: auto;
+                max-width: none;
+            }
+            @include media-breakpoint-up(lg) {
+                width: calc(66.666% - 4px);
+            }
+        }
+    }
+
+    .slider-arrows {
+        width: 100px;
+        position: absolute;
+        top: -57px;
+        right: 30px;
+    }
+}

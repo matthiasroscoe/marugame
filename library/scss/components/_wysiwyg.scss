@@ -1,0 +1,31 @@
+.c-wysiwyg {
+    h1 {
+        font-size: 40px;
+        line-height: 48px;
+        margin-bottom: 2.2rem;
+        @include media-breakpoint-up(md) {
+            font-size: 50px;
+            line-height: 60px;
+        }
+        @include media-breakpoint-up(xl) {
+            font-size: 64px;
+            line-height: 74px;
+        }
+    }
+
+    h2, h3, h4, h5, h6 {
+        color: $red;
+        font-size: 18px;
+        line-height: 26px;
+        letter-spacing: .5px;
+        @include media-breakpoint-up(lg) {
+            font-size: 22px;
+            line-height: 33px;
+        }
+    }
+
+    img {
+        border-radius: 4px;
+        margin: 25px 0 15px;
+    }
+}

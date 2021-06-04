@@ -1,0 +1,122 @@
+.kc-admin-page {
+  background: white;
+  padding: 30px;
+  margin-top: 20px;
+  margin-right: 20px;
+  position: relative;
+}
+.kc-admin-page h1 {
+  margin: 0 0 30px;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.kc-admin-page h1.mb-small {
+  margin-bottom: 15px;
+}
+.kc-admin-page .upload input[type=file] {
+  padding: 15px;
+  border: 1px dashed #aaa;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.kc-admin-page .actions {
+  margin-bottom: 20px;
+}
+.kc-admin-page .actions .divider {
+  padding-top: 35px;
+  margin-top: 35px;
+  border-top: 1px solid #ddd;
+}
+.kc-admin-page .actions .no-draft-reports .js-amend-drafts {
+  display: none;
+}
+.kc-admin-page .loading {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+}
+.kc-admin-page .loading__inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.kc-admin-page .loading img {
+  -webkit-animation: spin 4s linear infinite;
+  animation: spin 4s linear infinite;
+}
+.kc-admin-page .loading h3 {
+  padding-left: 10px;
+}
+.kc-admin-page .logo {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  max-width: 200px;
+}
+@media only screen and (max-width: 767px) {
+  .kc-admin-page .logo {
+    display: none;
+  }
+}
+.kc-admin-page .message {
+  padding: 10px 15px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 400;
+  background: #e4ffe8;
+  border-left: 4px solid #009218;
+  color: #009218;
+  clear: both;
+  margin: 0 0 20px;
+}
+.kc-admin-page .message.error {
+  background: #ffe6e6;
+  border-left: 4px solid #cc0000;
+  color: #cc0000;
+}
+.kc-admin-page .checkbox {
+  margin: 20px 0;
+}
+.kc-admin-page .btn {
+  padding: 13px 26px;
+  border-radius: 5px;
+  margin-right: 15px;
+  border: none;
+  display: inline-block;
+  background: #c81432;
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  -webkit-transition: all ease 200ms;
+  transition: all ease 200ms;
+  text-decoration: none;
+  cursor: pointer;
+}
+.kc-admin-page .btn:hover {
+  background: #e83e44;
+  color: #fff;
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

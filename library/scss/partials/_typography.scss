@@ -1,0 +1,259 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Typography
+
+Need to import a font or set of icons for your site? Drop them in
+here or just use this to establish your typographical grid. Or not.
+Do whatever you want to...GOSH!
+
+Helpful Articles:
+http://trentwalton.com/2012/06/19/fluid-type/
+http://ia.net/blog/responsive-typography-the-basics/
+http://alistapart.com/column/responsive-typography-is-a-physical-discipline
+
+******************************************************************/
+
+/*********************
+FONT FACE (IN YOUR FACE)
+*********************/
+
+@font-face {
+	font-family: "Oldschool";
+	src: url("../../../library/fonts/oldschool/OldschoolGrotesk-Light.eot");
+	src: url("../../../library/fonts/oldschool/OldschoolGrotesk-Light.eot?#iefix")
+			format("embedded-opentype"),
+		url("../../../library/fonts/oldschool/OldschoolGrotesk-Light.woff2") format("woff2"),
+		url("../../../library/fonts/oldschool/OldschoolGrotesk-Light.woff") format("woff"),
+		url("../../../library/fonts/oldschool/OldschoolGrotesk-Light.ttf") format("truetype"),
+		url("../../../library/fonts/oldschool/OldschoolGrotesk-Light.svg#GTWalsheim-Light")
+			format("svg");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Oldschool";
+	src: url("../../../library/fonts/oldschool/OldschoolGrotesk-Regular.eot");
+	src: url("../../../library/fonts/oldschool/OldschoolGrotesk-Regular.eot?#iefix")
+			format("embedded-opentype"),
+		url("../../../library/fonts/oldschool/OldschoolGrotesk-Regular.woff2") format("woff2"),
+		url("../../../library/fonts/oldschool/OldschoolGrotesk-Regular.woff") format("woff"),
+		url("../../../library/fonts/oldschool/OldschoolGrotesk-Regular.ttf") format("truetype"),
+		url("../../../library/fonts/oldschool/OldschoolGrotesk-Regular.svg#GTWalsheim-Regular")
+			format("svg");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Oldschool";
+	src: url("../../../library/fonts/oldschool/OldschoolGrotesk-Medium.eot");
+	src: url("../../../library/fonts/oldschool/OldschoolGrotesk-Medium.eot?#iefix")
+			format("embedded-opentype"),
+		url("../../../library/fonts/oldschool/OldschoolGrotesk-Medium.woff2") format("woff2"),
+		url("../../../library/fonts/oldschool/OldschoolGrotesk-Medium.woff") format("woff"),
+		url("../../../library/fonts/oldschool/OldschoolGrotesk-Medium.ttf") format("truetype"),
+		url("../../../library/fonts/oldschool/OldschoolGrotesk-Medium.svg#GTWalsheim-Medium")
+			format("svg");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Oldschool";
+	src: url("../../../library/fonts/oldschool/OldschoolGrotesk-Bold.eot");
+	src: url("../../../library/fonts/oldschool/OldschoolGrotesk-Bold.eot?#iefix")
+			format("embedded-opentype"),
+		url("../../../library/fonts/oldschool/OldschoolGrotesk-Bold.woff2") format("woff2"),
+		url("../../../library/fonts/oldschool/OldschoolGrotesk-Bold.woff") format("woff"),
+		url("../../../library/fonts/oldschool/OldschoolGrotesk-Bold.ttf") format("truetype"),
+		url("../../../library/fonts/oldschool/OldschoolGrotesk-Bold.svg#GTWalsheim-Bold")
+			format("svg");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+/*
+The following is based of Typebase:
+https://github.com/devinhunt/typebase.css
+I've edited it a bit, but it's a nice starting point.
+*/
+
+// Font stacks
+$sans-serif: "Oldschool", "Helvetica", Arial, sans-serif;
+
+/*
+some nice typographical defaults
+more here: http://www.newnet-soft.com/blog/csstypography
+*/
+p {
+	-ms-word-wrap: break-word;
+	word-break: break-word; //non-standart css for webkit
+	word-wrap: break-word;
+	// cleaning up the ragged lines and breaks
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	// sets a minimum number of characters before and after the break
+	-webkit-hyphenate-before: 2;
+	-webkit-hyphenate-after: 3;
+	hyphenate-lines: 3;
+	// enabling fancy ligatures when available
+	-webkit-font-feature-settings: "liga", "dlig";
+	-moz-font-feature-settings: "liga=1, dlig=1";
+	-ms-font-feature-settings: "liga", "dlig";
+	-o-font-feature-settings: "liga", "dlig";
+	font-feature-settings: "liga", "dlig";
+	max-width: 100%;
+}
+
+strong {
+	font-weight: 500;
+}
+
+a {
+	color: $black;
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: 0;
+	margin-bottom: 20px;
+	color: $black;
+	font-weight: 400;
+}
+
+h1 {
+	font-size: 24px;
+	line-height: 28px;
+
+	@include media-breakpoint-up(lg) {
+		font-size: 43px;
+		line-height: 45px;
+	}
+}
+
+.t-subheading {
+	font-size: 18px;
+	line-height: 26px;
+	letter-spacing: 0.5px;
+	color: $red--dark;
+
+	@include media-breakpoint-up(lg) {
+		font-size: 22px;
+		line-height: 33px;
+	}
+}
+
+.t-heading {
+	font-size: 40px;
+	line-height: 48px;
+
+	@include media-breakpoint-up(md) {
+		font-size: 50px;
+		line-height: 60px;
+	}
+
+	@include media-breakpoint-up(xl) {
+		font-size: 64px;
+		line-height: 74px;
+	}
+}
+
+.t-thumb-heading {
+	font-size: 26px;
+	line-height: 36px;
+
+	@include media-breakpoint-up(lg) {
+		font-size: 24px;
+		line-height: 32px;
+		padding-right: 60px;
+		&--large {
+			font-size: 32px;
+			line-height: 40px;
+			padding-right: 120px;
+		}
+	}
+}
+
+p,
+p a {
+	font-size: 14px;
+	line-height: 25px;
+	color: $body-text;
+	margin-top: 0;
+}
+
+/**
+ * Typographical utility classes
+ */
+
+// Text alignment
+.t-right {
+	text-align: right;
+}
+.t-left {
+	text-align: left;
+}
+.t-center {
+	text-align: center;
+}
+
+@include media-breakpoint-up(lg) {
+	.t-lg-right {
+		text-align: right;
+	}
+	.t-lg-left {
+		text-align: left;
+	}
+	.t-lg-center {
+		text-align: center;
+	}
+}
+
+// Misc text styling helpers
+
+.t-upper {
+	text-transform: uppercase;
+}
+.t-underline {
+	text-decoration: underline;
+}
+.fw-300 {
+	font-weight: 300;
+}
+.fw-400 {
+	font-weight: 400;
+}
+.fw-500 {
+	font-weight: 500;
+}
+
+// Text colour
+.t-white {
+	color: $white;
+}
+.t-black {
+	color: $black;
+}
+.t-red {
+	color: $red;
+}
+.t-brown {
+	color: $form-brown;
+}
+@include media-breakpoint-up(lg) {
+	.t-lg-white {
+		color: $white;
+	}
+}

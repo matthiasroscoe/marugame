@@ -1,0 +1,76 @@
+.hero-video {
+	background: black;
+	width: 100vw;
+	height: 100vh;
+	left: 0;
+	top: 0;
+
+	&__content {
+		margin-top: -40px;
+
+		h1 {
+			font-size: 40px;
+			line-height: 48px;
+			margin-bottom: 28px;
+
+			@media screen and (min-width: 340px) {
+				font-size: 50px;
+				line-height: 60px;
+			}
+
+			@include media-breakpoint-up(lg) {
+				font-size: 96px;
+				line-height: 130px;
+			}
+		}
+
+		p {
+			font-size: 18px;
+			line-height: 26px;
+			letter-spacing: 1px;
+			max-width: 625px;
+			margin: 0 auto 30px;
+
+			@include media-breakpoint-up(lg) {
+				font-size: 22px;
+				line-height: 33px;
+			}
+		}
+	}
+
+	&__scroll {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+
+		@media screen and (max-height: 500px) {
+			display: none;
+		}
+
+		@include media-breakpoint-up(lg) {
+			bottom: -25px;
+		}
+
+		p {
+			font-size: 15px;
+			font-weight: 400;
+			color: $white;
+
+			@include media-breakpoint-up(lg) {
+				font-size: 16px;
+			}
+		}
+
+		img {
+			display: block;
+			margin: 0 auto;
+			position: relative;
+			left: 8px;
+
+			@include media-breakpoint-up(lg) {
+				width: 44px;
+			}
+		}
+	}
+}

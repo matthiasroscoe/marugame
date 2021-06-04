@@ -1,0 +1,128 @@
+.c-btn {
+	appearance: none;
+	padding: 18px 27px;
+	border: none;
+	border-radius: 2px;
+	font-family: $sans-serif;
+	font-size: 14px;
+	line-height: 25px;
+	text-align: center;
+	background-color: $red--dark;
+	color: white;
+	display: inline-block;
+	transition: all ease 200ms;
+
+	&:hover {
+		background: $red;
+	}
+
+	&--small {
+		padding: 15px 20px;
+		border-radius: 3px;
+		font-size: 12px;
+		line-height: 20px;
+	}
+	
+	&--arrow {
+		position: relative;
+		&:after {
+			opacity: 0;	
+			content: '';
+			position: absolute;
+			top: 23px;
+			right: 5px;
+			width: 18px;
+			height: 16px;
+			background: url('#{$images}/icons/arrow-short--white.svg') center no-repeat;
+			background-size: contain;
+			transition: all ease 200ms;
+		}
+		
+		&.c-btn--white:after {
+			background: url('#{$images}/icons/arrow-short--black.svg') center no-repeat;
+			background-size: contain;
+		}
+
+		&:hover {
+			padding-left: 15px;
+			padding-right: 39px;
+			&:after {
+				opacity: 1;
+				right: 12px;
+			}
+		}
+	}
+
+	&--outline {
+		background-color: transparent;
+		position: relative;
+		border: 1px solid $white;
+		border-radius: 4px;
+		opacity: 1;
+		
+		&:hover {
+			border-color: rgba($white, .6);
+		}
+
+		&--red {
+			border-color: $red--dark;
+			color: $red--dark;
+
+			&:hover {
+				background-color: transparent;
+				border-color: $red;
+				color: $red;
+			}
+		}
+	}
+
+	&--white {
+		background-color: $white;
+		color: $black;
+
+		&:hover {
+			background-color: rgba($white, .85);
+		}
+
+		&.c-btn--arrow:hover {
+			background-color: $white;
+		}
+	}
+
+	&--large {
+		border-radius: 3px;
+		padding: 19px 30px;
+		font-size: 16px;
+		line-height: 23px;
+
+		&.c-btn--arrow {
+			&:hover {
+				padding-left: 18px;
+				padding-right: 42px;
+
+				&:after {
+					right: 15px;
+				}
+			}
+		}
+	}
+}
+
+
+.c-slider-arrow {
+	display: block;
+	width: 44px;
+	height: 44px;
+	background: url('#{$images}/icons/slick-arrow--next.svg') no-repeat center;
+	background-size: contain;
+	
+	@include media-breakpoint-up(lg) {
+		width: 67px;
+		height: 67px;
+	}
+	
+	&--prev {
+		background: url('#{$images}/icons/slick-arrow--prev.svg') no-repeat center;
+		background-size: contain;
+	}
+}

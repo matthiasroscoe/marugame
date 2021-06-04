@@ -1,0 +1,7 @@
+.statement-text {
+    margin: 35px 0;
+
+    @include media-breakpoint-up(lg) {
+        margin: 50px 0;
+    }
+}

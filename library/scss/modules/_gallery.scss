@@ -1,0 +1,25 @@
+.gallery {
+    margin-bottom: 75px;
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 125px;
+        margin-top: 30px;
+    }
+    
+
+    &__img {
+        @include aspect-ratio(1,1);
+
+        img {
+            transform: scale(1);
+            transition: ease 1s;
+        }
+
+        @include media-breakpoint-up(lg) {
+            &:hover {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}

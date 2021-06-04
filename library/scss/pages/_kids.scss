@@ -1,0 +1,9 @@
+.content-img.module-2 {
+    .content-img__img {
+        @include media-breakpoint-up(xl) {
+            width: 398px;
+            height: 360px;
+            margin: 0 auto;
+        }
+    }
+}

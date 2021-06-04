@@ -1,0 +1,134 @@
+.footer-illustration-mobile {
+	min-width: 700px;
+	left: -230px;
+}
+.footer-illustration-desktop {
+	min-width: 100vw;
+	left: 0;
+
+	@include media-breakpoint-up(xxl) {
+		min-width: 1440px;
+		left: calc(50% - 720px);
+	}
+}
+
+#site-footer {
+	background: $red;
+	padding: 35px 0;
+
+	@include media-breakpoint-up(lg) {
+		padding: 25px 0 35px;
+	}
+
+	.footer {
+
+		&__logo {
+			width: 48px;
+			height: 48px;
+			margin-bottom: 38px;
+
+			@include media-breakpoint-up(lg) {
+				margin-bottom: 0;
+				margin-right: 40px;
+				width: 24px;
+				height: 24px;
+			}
+		}
+
+		&__menu {
+			.link {
+				@media (pointer: fine) {
+					&:after {
+						content: '';
+						display: block;
+						background: $black;
+						height: 1px;
+						width: 0;
+						opacity: .7;
+						transition: width .3s;
+					}
+				}
+
+				@include media-breakpoint-down(md) {
+					flex: 0 0 50%;
+					max-width: 50%;
+					padding-bottom: 18px;
+				}
+
+				@include media-breakpoint-up(lg) {
+					font-size: 10px;
+					margin: 0 20px 18px 0;
+					opacity: 1;
+					transition: opacity ease 300ms;
+					margin-bottom: 0;
+
+					&:hover {
+						@media (pointer: fine) {
+							&:after {
+								width: 100%;
+							}
+						}
+					}
+				}
+
+			}
+		}
+
+		&__socials {
+			@include media-breakpoint-down(md) {
+				position: absolute;
+				top: 0;
+				right: 0px;
+			}
+
+			a {
+				margin-left: 8px;
+				opacity: 1;
+
+				img {
+					width: 36px;
+					height: 36px;
+					filter: invert(0);
+					transition: filter ease 300ms;
+				}
+
+				&:hover {
+					img {
+						filter: invert(1);
+					}
+				}
+			}
+		}
+
+		&__credits {
+			padding-top: 30px;
+			margin-top: 24px;
+
+			@include media-breakpoint-up(lg) {
+				margin-top: 20px;
+				padding-top: 20px;
+			}
+
+			&:after {
+				content: '';
+				position: absolute;
+				display: block;
+				top: 0;
+				left: 15px;
+				height: 1px;
+				width: calc(100% - 30px);
+				background: rgba(0,0,0,0.32);
+				
+				@include media-breakpoint-up(lg) {
+					left: 30px;
+					width: calc(100% - 60px);
+				}
+			}
+			
+			span, span a {
+				color: rgba($black, .45);
+				font-size: 12px;
+			}
+		}
+	}
+}

@@ -1,0 +1,233 @@
+#site-header {
+	position: fixed;
+	z-index: $z-header;
+	width: 100%;
+	left: 0;
+	top: 0;
+	opacity: 1;
+	visibility: visible;
+	transition: all ease 400ms;
+
+	.is-playing-video & {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	.header-inner {
+		padding-top: 20px;
+		transition: all $mgEase 400ms;
+		@include media-breakpoint-up(lg) {
+			padding: 35px 35px 0;
+		}
+
+		.menu-links {
+			top: 0;
+			transition: all $mgEase 400ms;
+
+			&__link-container {
+				padding: 10px 12px;
+				@media screen and (min-width: 1400px) {
+					padding: 10px 20px;
+				}
+
+				.parent-link {
+					font-size: 12px;
+					color: $white;
+					transition: color $mgEase 400ms;
+
+					@include media-breakpoint-up(xxl) {
+						font-size: 14px;
+					}
+
+					.wiggle {
+						position: absolute;
+						bottom: -7px;
+						height: 3px;
+						left: 20%;
+						width: 60%;
+						overflow: hidden;
+						transform: translateX(-105%);
+						transition: 0.45s cubic-bezier(0.52, 0.01, 0.16, 1);
+						backface-visibility: hidden;
+
+						&::before {
+							content: '';
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
+							transform: translateX(105%);
+							transition: 0.45s cubic-bezier(0.52, 0.01, 0.16, 1);
+							background: url("#{$images}/icons/wiggle.svg") repeat-x center center/7px 3px;
+						}
+					}
+
+					&:hover {
+						.wiggle,
+						.wiggle::before {
+							transform: translateX(0);
+						}
+					}
+				}
+
+				.dropdown-container {
+					opacity: 0;
+					visibility: hidden;
+					position: absolute;
+					border-radius: 4px;
+					top: 55px;
+					left: 0;
+					width: 100%;
+					transition: all $mgEase 300ms;
+					box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.1);
+
+					&.is-active {
+						opacity: 1;
+						visibility: visible;
+						top: 48px;
+					}
+				}
+
+				.dropdown-link {
+					padding: 15px;
+					background: $red;
+					color: $white;
+					// border-top: 1px solid #C13439;
+					border-top: 1px solid $red--dark;
+					transition: background-color ease 300ms;
+
+					@include media-breakpoint-up(xxl) {
+						padding: 25px;
+					}
+
+					&:hover {
+						background: $red--dark;
+						
+						&::before {
+							border-bottom-color: $red--dark;
+						}
+					}
+
+					&--first {
+						border-radius: 4px 4px 0 0;
+						border-top: 0;
+
+						&::before {
+							content: '';
+							position: absolute;
+							left: calc(50% - 7px);
+							top: -14px;
+							width: 14px;
+							height: 14px;
+							border: 7px solid transparent;
+							border-bottom-color: $red;
+							transition: border-color ease 300ms;
+						}
+					}
+					&--last {
+						border-radius: 0 0 4px 4px;
+					}
+				}
+			}
+
+			&__btn {
+				font-size: 14px;
+				padding: 19px 22px;
+				background: $red--dark;
+				color: $white;
+				margin-left: 16px;
+				border-radius: 3px;
+				transition: all ease 300ms;
+
+				&:hover {
+					background: $red;
+				}
+				
+				@include media-breakpoint-up(xxl) {
+					padding: 19px 26px;
+				}
+			}
+		}
+
+		.hamburger {
+			position: absolute;
+			cursor: pointer;
+			top: 0;
+			right: 0;
+			padding: 19px 15px;
+			background: $red--dark;
+			transition: all $mgEase 400ms;
+
+			@include media-breakpoint-up(lg) {
+				right: 50px;
+				top: 27px;
+			}
+
+			@include media-breakpoint-up(xl) {
+				opacity: 0;
+				visibility: hidden;
+
+				&:hover {
+					background: $red;
+				}
+			}
+
+			img {
+				width: 28px;
+			}
+		}
+
+		&.is-scrolled {
+			padding-top: 17px;
+
+			.c-logo {
+				&__symbol {
+					width: 35px;
+					height: 35px;
+				}
+				&__text {
+					opacity: 0;
+				}
+			}
+
+			.hamburger {
+				opacity: 1;
+				visibility: visible;
+				@include media-breakpoint-up(lg) {
+					top: 15px;
+				}
+			}
+
+			.menu-links {
+				opacity: 0;
+				visibility: hidden;
+				// top: 4px;
+				
+				// &__link-container {
+				// 	.parent-link {
+				// 		color: $black;
+				// 	}
+				// }
+			}
+		}
+	}
+
+	// Change header when on single product page
+	&.is-product-page {
+		.c-logo__text--white {
+			display: none;
+		}
+		.c-logo__text--black {
+			display: block;
+		}
+
+		.menu-links {
+			&__link-container {
+				.parent-link {
+					color: $black;
+				}
+			}
+		}
+	}
+}

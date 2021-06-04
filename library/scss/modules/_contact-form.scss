@@ -1,0 +1,24 @@
+.contact-form {
+    margin-bottom: 70px;
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 120px;
+    }
+
+    .c-form__label {
+        background: $white;
+    }
+
+    .c-form__field {
+        input[type=date],
+        input[type=email],
+        input[type=number],
+        input[type=password],
+        input[type=tel],
+        input[type=text],
+        textarea,
+        .selectric {
+            background: $white;
+        }
+    }
+}

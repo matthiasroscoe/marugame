@@ -1,0 +1,106 @@
+.slider {
+    padding: 90px 0 180px;
+    margin-bottom: 70px;
+    background-color: $red--dark;
+    background: url('#{$images}/slider-bg.jpg') no-repeat center;
+    background-size: cover;
+    @include background-clip-path;
+
+    @include media-breakpoint-up(lg) {
+        padding: 140px 0 160px;
+        margin-bottom: 100px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        padding: 170px 0 190px;
+    }
+
+    &__intro {
+        margin-bottom: 35px;
+    }
+
+    &__slides {
+        @include media-breakpoint-up(xxl) {
+            padding-left: calc(((100vw - 1410px) / 2) + (1410px / 12.04));
+        }
+
+        .slick-list {
+            // padding-right: 33.333vw;
+            padding-right: 18vw;
+            padding-left: 30px;
+            @include media-breakpoint-up(lg) {
+                padding-right: 14vw;
+            }
+            @include media-breakpoint-up(xl) {
+                margin-left: 30px;
+                padding-left: 0;
+            }
+            @include media-breakpoint-up(xxl) {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &__slide {
+        background-color: $white;
+        border-radius: 4px;
+        padding: 30px;
+        margin-right: 10px;
+
+        @include media-breakpoint-up(lg) {
+            padding: 44px;
+        }
+
+        img {
+            position: relative;
+            top: -10px;
+            left: -10px;
+            margin-bottom: 20px;
+            max-width: 63px;
+
+            @include media-breakpoint-up(lg) {
+                max-width: 121px;
+                left: -15px;
+            }
+        }
+
+        h3 {
+            font-size: 26px;
+            // line-height: 36px;
+
+            @include media-breakpoint-up(lg) {
+                font-size: 34px;
+                // line-height: 47px;
+            }
+        }
+
+        p {
+            font-size: 13px;
+            line-height: 25px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-right: 20px;
+        }
+    }
+
+    .c-slider-arrow {
+        position: absolute;
+        left: 85px;
+        bottom: -75px;
+        @include media-breakpoint-up(lg) {
+            left: auto;
+            right: 16.666vw;
+            bottom: -38px;
+        }
+
+        &--prev {
+            left: 30px;
+            @include media-breakpoint-up(lg) {
+                // display: none;
+                right: calc(16.666vw + 85px);
+                left: auto;
+            }
+        }
+    }
+}

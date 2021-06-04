@@ -1,0 +1,152 @@
+.hero + .content-img {
+	padding-top: 20px;
+}
+.hero + .content-img.has-bg {
+	@include media-breakpoint-up(lg) {
+		padding-top: 0;
+		margin-top: -50px;
+	}
+}
+.slider + .content-img:not(.has-bg) {
+	padding-top: 0;
+}
+
+// Remove bottom margin from modules that follow content-img and also have a slanted bg.
+.content-img.has-bg + .content-img.has-bg,
+.content-img.has-bg + .slider {
+	margin-top: -115px;
+	padding-top: 120px;
+
+	@include media-breakpoint-up(md) {
+		margin-top: -170px;
+		padding-top: 160px;
+	}
+	@include media-breakpoint-up(xxl) {
+		margin-top: -220px;
+	}
+}
+
+.content-img.has-bg + .content-img {
+	padding-top: 0;
+}
+
+.content-img {
+	padding: 70px 0 100px;
+	
+	@include media-breakpoint-up(lg) {
+		padding: 70px 0;
+	}
+	
+	&.has-bg {
+		position: relative;
+		padding-top: 100px;
+		margin-bottom: 70px;
+
+		@include media-breakpoint-up(lg) {
+			padding: 200px 0 140px;
+			margin-bottom: 100px;
+		}
+
+		&:before {
+			content: '';
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			z-index: -1;
+			@include background-clip-path;
+		}
+		&.beige--dark:before {
+			background: $beige--dark;
+		}
+		&.red:before {
+			background: $red;
+		}
+	}
+
+	&__img {
+		z-index: 1;
+		margin-bottom: 30px;
+		@include aspect-ratio(530, 480);
+
+		@include media-breakpoint-up(md) {
+			padding-top: 0;
+			width: 398px;
+			height: 360px;
+		}
+
+		@include media-breakpoint-up(lg) {
+			margin-bottom: 0;
+		}
+		
+		@include media-breakpoint-up(xl) {
+			width: 530px;
+			height: 480px;
+		}
+
+		&--static-illustration {
+			margin-bottom: 0px;
+			
+			img {
+				width: 440px;
+				max-width: 80%;
+				margin-left: 10%;
+				@include media-breakpoint-up(md) {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+
+	&__lottie-container {
+		position: relative;
+		margin: 0 auto;
+		z-index: 1;
+
+		&.js-lottie-hand-bowl {
+			width: 285px;
+			@include media-breakpoint-up(lg) {
+				width: 450px;
+				margin-left: 0;
+			}
+		}
+	}
+
+	// Stars illustration
+	&__stars {
+		position: absolute;
+		top: -20px;
+		right: -20px;
+
+		@include media-breakpoint-up(lg) {
+			top: -150px;
+		}
+	}
+
+	// Noodle Hills illustration
+	&.has-noodle-hills {
+		@include media-breakpoint-up(lg) {
+			padding-bottom: 220px;
+		}
+	}
+	
+	&__noodle-hills {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 150px;
+
+		@include media-breakpoint-up(sm) {
+			width: 190px;
+		}
+		
+		@include media-breakpoint-up(lg) {
+			bottom: 50px;
+			width: 295px;
+		}
+
+		@include media-breakpoint-up(xxl) {
+			width: 343px;
+		}
+	}
+}

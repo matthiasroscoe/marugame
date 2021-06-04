@@ -1,0 +1,58 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Variables
+
+Here is where we declare all our variables like colors, fonts,
+base values, and defaults. We want to make sure this file ONLY
+contains variables that way our files don't get all messy.
+No one likes a mess.
+
+******************************************************************/
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+
+$black: #000000;
+// $body-text: #31312f;
+$body-text: #7F7F7F;
+$white: #ffffff;
+$beige: #f1f0ea;
+$beige--dark: #E9E8E3;
+$grey: #868579;
+$form-brown: #868579;
+$red: #e83e44;
+$red--dark: #c81432;
+$red-hover: #f4343a;
+
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
+
+/**
+ * Easings
+ */
+$easeExtreme: cubic-bezier(0.165, 0.84, 0.44, 1);
+$mgEase: cubic-bezier(0.46, 0.19, 0.51, 0.85);
+$mgEase2: cubic-bezier(0.32, 0.02, 0.4, 0.99);
+$easeOutQuad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+/**
+ * Shortcuts
+ */
+$images: "/wp-content/themes/marugame/library/images";
+
+/**
+ * Z-Indeces
+ */
+$z-welcome: 1000;
+$z-header: 1005;
+$z-overlay: 1010;
+$z-cursor: 1020;
+$z-page-transition: 1025;

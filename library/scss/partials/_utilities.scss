@@ -1,0 +1,107 @@
+// Flexbox
+.flex-center {
+	justify-content: center;
+	align-items: center;
+}
+.flex-md-center {
+	@include media-breakpoint-up(md) {
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+// Box model
+.u-px-15 {
+	padding-left: 15px !important;
+	padding-right: 15px !important;
+}
+.u-px-mob-15 {
+	@include media-breakpoint-down(md) {
+		padding-left: 15px !important;
+		padding-right: 15px !important;
+	}
+}
+
+// Image borders
+.u-border-img {
+
+	.u-border-img__img-container {
+		overflow: hidden;
+		position: absolute;
+		left: 3px;
+		top: 3px;
+		width: calc(100% - 6px);
+		height: calc(100% - 6px);
+		border-radius: 6px;
+		
+		> img {
+			@include absolute-fill;
+			border-radius: 6px;
+		}
+	}
+
+	> .line-border {
+		@include absolute-fill;
+		object-fit: none;
+		border: 6px solid;
+		border-image: url('#{$images}/line-border.svg') stretch;
+		border-image-slice: 9;
+
+		@include media-breakpoint-up(xl) {
+			border-width: 9px;
+		}
+	}
+}
+
+
+// Positioning
+.u-rel {
+	position: relative;
+}
+.u-fix {
+	position: fixed;
+}
+.u-fluid {
+	@include absolute-fill();
+
+	&--contain {
+		object-fit: contain;
+	}
+}
+.u-lg-fluid {
+	@include media-breakpoint-up(lg) {
+		@include absolute-fill();
+	}
+}
+
+// Height/width
+.u-h100 {
+	height: 100%;
+}
+.u-w100 {
+	width: 100%;
+}
+@include media-breakpoint-up(lg) {
+	.u-lg-w100 {
+		width: 100%;
+	}
+	.u-lg-h100 {
+		width: 100%;
+	}
+}
+
+// Background
+.bg-red {
+	background: $red;
+}
+.bg-beige {
+	background: $beige;
+}
+.bg-beige--dark {
+	background: $beige--dark;
+}
+
+// Misc
+.u-pointer {
+	cursor: pointer;
+}

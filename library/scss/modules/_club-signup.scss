@@ -1,0 +1,176 @@
+.google-map + .club-signup {
+	margin-top: -100px;
+    @include media-breakpoint-up(md) {
+		margin-top: -170px;
+    }
+}
+
+.club-signup {
+	margin-top: 100px;
+	margin-bottom: 70px;
+	
+	@include media-breakpoint-up(lg) {
+		margin-bottom: 100px;
+	}
+
+	&.module--last {
+		margin-bottom: 0;
+	}
+
+	// Star illustration
+	&--red {
+		overflow: hidden;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: -30px;
+			left: 0;
+			width: 120px;
+			height: 213px;
+			background: url('#{$images}/icons/club-signup-stars.svg') center no-repeat;
+			background-size: contain;
+			
+			@include media-breakpoint-up(xl) {
+				width: 197px;
+				height: 302px;
+			}
+		}
+
+		// Rings illustration
+		&.module--last:after {
+			content: '';
+			display: block;
+			position: absolute;
+			bottom: -120px;
+			right: -120px;
+			background: url('#{$images}/icons/club-signup-rings.svg') no-repeat center;
+			background-size: contain;
+			width: 446px;
+			height: 283px;
+
+			@include media-breakpoint-up(lg) {
+				display: none;
+			}
+			
+			@include media-breakpoint-up(xxl) {
+				display: block;
+				bottom: -130px;
+				right: -560px;
+				width: 832px;
+				height: 695px;	
+			}
+		}
+	}
+
+	&__inner {
+		padding: 20px 0 200px;
+		
+		@include media-breakpoint-up(lg) {
+			padding: 80px 0 80px;
+		}
+
+		&:before {
+			content: '';
+			display: block;
+			@include absolute-fill;
+			z-index: -1;
+			background: $red;
+			@include background-clip-path;
+		}
+
+		&.module--last:before {
+			border-bottom: 1px solid $black;
+			clip-path: polygon(0 35px, 100% 0, 100% 100%, 0 100%);
+	
+			@include media-breakpoint-up(md) {
+				clip-path: polygon(0 70px, 100% 0, 100% 100%, 0 100%);
+			}
+			@include media-breakpoint-up(xxl) {
+				clip-path: polygon(0 120px, 100% 0, 100% 100%, 0 100%);
+			}
+		}
+
+		&--beige {
+			&:before {
+				background-color: $beige--dark;
+			}
+		}
+	}
+
+	&__content {
+		order: 2;
+		@include media-breakpoint-up(lg) {
+			order: 1;
+			max-width: 420px;
+			padding-top: 90px;
+		}
+	}
+
+	&__heading {
+		margin-bottom: 35px;
+	}
+
+	&__text {
+		margin-bottom: 30px;
+	}
+
+	&__form {
+		display: none;
+		@include media-breakpoint-up(lg) {
+			padding-top: 30px;
+			padding-bottom: 50px;
+		}
+	}
+
+	// Lottie line anim
+	&__lottie-container-1 {
+		position: absolute;
+		top: -170px;
+		left: -100px;
+		width: 1000px;
+		height: 1200px;
+
+		@include media-breakpoint-up(lg) {
+			top: -330px;
+			left: -250px;
+			width: 2193px;
+			height: 2708px;
+		}
+	}
+
+	// Lottie noodle bowl anim
+	&__image {
+		order: 1;
+		margin-bottom: 30px;
+
+		@include media-breakpoint-up(lg) {
+			order: 2;
+			padding-top: 25px;
+			margin-bottom: 0;
+		}
+	}
+
+	&__lottie-container-2 {
+		margin-left: auto;
+		width: 65vw;
+		max-width: 350px;
+
+		@include media-breakpoint-up(lg) {
+			width: 450px;
+			max-width: none;
+			margin-right: auto;
+		}
+		@include media-breakpoint-up(xl) {
+			width: 550px;
+			margin-right: 0;
+		}
+
+		&--red {
+			@include media-breakpoint-up(lg) {
+				margin-right: auto;
+				margin-left: 0;
+			}
+		}
+	}
+}

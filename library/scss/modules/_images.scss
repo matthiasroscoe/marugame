@@ -1,0 +1,44 @@
+.images {
+    margin: 0 0 70px;
+    @include media-breakpoint-up(lg) {
+        margin: 0 30px 100px;
+    }
+
+    &__img-container {
+        &__inner {
+            height: 48vw;
+            max-height: 690px;
+
+            &:after {
+                content: '';
+                @include absolute-fill;
+                border-radius: 4px;
+                background: linear-gradient(to top, rgba(0,0,0,.9) 0%, rgba(0,0,0,0) 160px);
+            }
+        }
+
+        &--half {
+            .images__img-container__inner {
+                margin-bottom: 25px;
+                @include media-breakpoint-up(lg) {
+                    height: 34.5vw;
+                    max-height: 500px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &__caption {
+            position: absolute;
+            z-index: 2;
+            bottom: 30px;
+            left: 30px;
+            color: $white;
+        }
+
+        &__img {
+            
+            border-radius: 4px;
+        }
+    }
+}

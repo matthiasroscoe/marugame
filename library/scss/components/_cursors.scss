@@ -1,0 +1,48 @@
+.c-cursor {
+    position: fixed;
+    will-change: transform;
+    pointer-events: none;
+    @include flex-center;
+    width: 24px;
+    height: 24px;
+    left: -100px;
+    top: -100px;
+    z-index: $z-cursor;
+    
+    @include media-breakpoint-down(md) {
+        display: none !important; // Make sure cursor disabled below 992px
+    }
+
+    .cursor {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        transform: scale(0);
+    }
+    .js-cursor-play {
+        transform: scale(2);
+        background-image: url('#{$images}/icons/play-video.svg');
+        background-size: 24px 24px;
+        background-position: center;
+        transition: all 350ms linear;
+    }
+    .js-cursor-close {
+        transform: scale(0);
+        background-image: url('#{$images}/icons/close-video.svg');
+        background-size: 24px 24px;
+        background-position: center;
+        transition: all 350ms linear;
+    }
+
+    &.has-close-cursor {
+        .js-cursor-play {
+            opacity: 0;
+        }
+        .js-cursor-close {
+            transform: scale(2);
+        }
+    }
+}

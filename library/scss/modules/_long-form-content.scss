@@ -1,0 +1,7 @@
+.long-form-content {
+    margin: 35px 0 70px;
+
+    @include media-breakpoint-up(lg) {
+        margin: 50px 0 100px;
+    }
+}

@@ -1,0 +1,107 @@
+.hero {
+    overflow: hidden;
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 60px;
+    }
+    
+    &__img {
+        height: 423px;
+        @include media-breakpoint-up(lg) {
+            height: 640px;
+        }
+    }
+
+    &__gradient {
+        height: 160px;
+        background: linear-gradient(to bottom, rgba($black, .5), rgba($black, 0));
+        @include media-breakpoint-up(lg) {
+            height: 250px;
+        }
+    }
+
+    &__top {
+        height: 303px;
+        padding-top: 115px;
+
+        @include media-breakpoint-up(lg) {
+            height: 326px;
+            padding-left: 60px !important;
+        }
+    }
+
+    .back-link {
+        color: $white;
+        font-size: 12px;
+        line-height: 25px;
+        padding-left: 20px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 14px;
+            height: 9px;
+            background: url('#{$images}/icons/back-link-arrow.svg') no-repeat center;
+            background-size: contain;
+        }
+    }
+
+    &__content {
+        padding: 0 15px !important;
+        @include media-breakpoint-up(lg) {
+            padding: 0 30px !important;
+        }
+
+        .back-link {
+            color: #7F7F7F;
+            padding-bottom: 35px;
+
+            &:before {
+                top: 7px;
+                background: url('#{$images}/icons/back-link-arrow-grey-2.svg') no-repeat center;
+            }
+        }
+
+        &__inner {
+            padding: 28px 26px;
+            background: $beige;
+
+            @include media-breakpoint-up(lg) {
+                margin-left: 30px;
+                padding: 50px calc(8.33vw - 30px);
+            }
+
+            @include media-breakpoint-up(xxl) {
+                padding: 50px 77px;
+            }
+        }
+    }
+
+    &__address-title {
+        color: $black;
+        font-size: 20px;
+        line-height: 29px;
+        margin-bottom: 14px;
+    }
+
+    &__address {
+        margin-bottom: 8px;
+    }
+
+    &__google-maps-link {
+        display: inline-block;
+        color: $red--dark;
+        font-size: 16px;
+        line-height: 25px;
+        text-decoration: underline;
+        margin-bottom: 45px;
+    }
+
+    &__stars {
+        position: absolute;
+        width: 75px;
+        right: -20px;
+        transform: translateY(35px);
+    }
+}
